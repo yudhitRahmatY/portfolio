@@ -1,140 +1,325 @@
-/* 🌐 Global Styles */
+/* ==========================================
+   1. PREMIUM VARIABLES & CYBER ART ARCHITECTURE
+   ========================================== */
+:root {
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --bg-body: #06070d;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-color: #3b82f6;
+  --accent-rgb: 59, 130, 246;
+  --navbar-bg: rgba(6, 7, 13, 0.5);
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --neon-glow-effect: rgba(59, 130, 246, 0.18);
+  --timeline-line: linear-gradient(to bottom, #3b82f6, #818cf8);
+  --shadow-spatial: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+[data-bs-theme="light"] {
+  --bg-body: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent-color: #2563eb;
+  --accent-rgb: 37, 99, 235;
+  --navbar-bg: rgba(248, 250, 252, 0.5);
+  --card-bg: rgba(15, 23, 42, 0.02);
+  --card-border: rgba(15, 23, 42, 0.06);
+  --neon-glow-effect: rgba(37, 99, 235, 0.08);
+  --timeline-line: linear-gradient(to bottom, #2563eb, #3b82f6);
+  --shadow-spatial: 0 20px 40px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1a1a40, #0f0f1a);
-  color: #f0f0f0;
-  line-height: 1.6;
-  padding-top: 70px;
+  font-family: var(--font-main);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* 🌌 Navbar Glassmorphism */
+/* Bulatan Cahaya Abstrak di Latar Belakang (Ambient Blur) */
+.ambient-glow-1, .ambient-glow-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+.ambient-glow-1 { top: -100px; right: -50px; background: rgba(var(--accent-rgb), 0.6); }
+.ambient-glow-2 { top: 600px; left: -100px; background: #6366f1; }
+
+/* ==========================================
+   2. MINIMALIST BLUR NAVBAR
+   ========================================== */
 .navbar {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  border-radius: 0 0 20px 20px;
-  transition: background 0.3s ease-in-out;
+  background: transparent;
+  padding: 26px 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1100;
 }
-.navbar .nav-link {
-  color: #f0f0f0 !important;
-  transition: color 0.3s ease-in-out;
+.navbar.scrolled {
+  background: var(--navbar-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--card-border);
 }
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: #00ffcc !important;
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--text-main) !important;
+}
+.navbar-brand .dot { color: var(--accent-color); }
+
+.space-links .nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.space-links .nav-link:hover {
+  color: var(--text-main) !important;
 }
 
-/* 🟣 Hero Section */
-.hero {
-  background: linear-gradient(135deg, #0f0f1a, #1a1a40);
-  color: white;
-  text-align: center;
-}
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-}
-.hero .lead {
-  font-size: 1.2rem;
-}
+.theme-toggle { cursor: pointer; font-size: 1.1rem; }
 
-/* ✨ Glow Foto Profil */
-.hero img,
-.rounded-circle {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border: 4px solid #00ffcc;
-  animation: glowPulse 3s infinite;
+/* ==========================================
+   3. CYBER SPATIAL HERO
+   ========================================== */
+.hero-spatial {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 80px;
 }
-@keyframes glowPulse {
-  0%   { box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
-  50%  { box-shadow: 0 0 25px #00ffcc, 0 0 50px #00ffcc; }
-  100% { box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
-}
-
-/* 🎇 Typing Effect */
-.typing-text {
-  border-right: 2px solid #fff;
-  white-space: nowrap;
-  overflow: hidden;
+.hero-badge {
   display: inline-block;
-  animation: typing 4s steps(30, end) infinite alternate,
-             blink 0.7s step-end infinite;
+  padding: 6px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 24px;
 }
-@keyframes typing {
-  from { width: 0; }
-  to   { width: 100%; }
+.spatial-title {
+  font-size: 4.2rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin-bottom: 24px;
 }
-@keyframes blink {
-  50% { border-color: transparent; }
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent-color), #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.spatial-lead {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  max-width: 540px;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
-/* 🃏 Card */
-.card {
-  background: rgba(255, 255, 255, 0.08);
-  border: none;
-  border-radius: 20px;
+/* Button UI */
+.hero-cta-group { display: flex; gap: 16px; justify-content: center; }
+@media (min-width: 992px) { .hero-cta-group { justify-content: flex-start; } }
+
+.btn-spatial-primary {
+  background: var(--text-main);
+  color: var(--bg-body) !important;
+  padding: 14px 32px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 255, 204, 0.4);
+.btn-spatial-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(var(--accent-rgb), 0.2);
 }
-.card-title {
-  color: #00ffcc;
+.btn-spatial-secondary {
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-main) !important;
+  padding: 14px 32px;
   font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.3s;
 }
+.btn-spatial-secondary:hover { background: rgba(255,255,255,0.05); }
 
-/* 📋 Form Kontak */
-form {
-  color: white;
+/* Showcase Visual (Kanan) */
+.spatial-showcase {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
 }
-form .form-control {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: white;
-  padding: 12px 18px;
+.grid-overlay {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  background-image: radial-gradient(var(--card-border) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  z-index: 1;
+  pointer-events: none;
 }
-form .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+.glass-frame {
+  width: 85%;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: rgba(255,255,255,0.01);
+  box-shadow: var(--shadow-spatial);
+  transform: rotateY(-10deg) rotateX(5deg);
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  z-index: 2;
 }
-form .form-control:focus {
-  background: rgba(255, 255, 255, 0.15);
-  outline: none;
-  box-shadow: 0 0 10px #00ffcc;
-}
-
-/* 🔘 Gradient Button */
-.btn-gradient {
-  background: linear-gradient(45deg, #00ffcc, #0066ff);
-  border: none;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
+.showcase-img { width: 100%; height: 100%; object-fit: cover; }
+.glass-card-tag {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(6, 7, 13, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 0.85rem;
   font-weight: 600;
-  transition: all 0.3s ease;
-}
-.btn-gradient:hover {
-  background: linear-gradient(45deg, #0066ff, #00ffcc);
-  box-shadow: 0 0 15px #00ffcc;
-  transform: scale(1.05);
+  border: 1px solid var(--card-border);
 }
 
-/* 🦶 Footer */
+/* ==========================================
+   4. BENTO GRID DESIGN SYSTEM
+   ========================================== */
+.section-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+}
+.title-3d { letter-spacing: -1px; }
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .item-large { grid-column: span 2; }
+}
+
+.bento-card-inner {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-spatial);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 0.4s ease;
+}
+.bento-card-inner:hover { border-color: rgba(var(--accent-rgb), 0.4); }
+
+.card-glow {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; opacity: 0; z-index: 3;
+  mix-blend-mode: screen; transition: opacity 0.4s ease;
+}
+
+.bento-img-wrapper {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.2);
+}
+.item-large .bento-img-wrapper { height: 340px; }
+
+.bento-img-wrapper img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bento-card-inner:hover .bento-img-wrapper img { transform: scale(1.04); }
+
+.bento-content { padding: 32px; display: flex; flex-direction: column; gap: 8px; }
+.project-category { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
+.bento-content p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; line-height: 1.5; }
+
+/* ==========================================
+   5. MINIMALIST KINETIC TIMELINE
+   ========================================== */
+.timeline-container { max-width: 800px; margin: 0 auto; }
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 2px;
+  height: 100%; background: var(--timeline-line);
+}
+.timeline-item { position: relative; margin-bottom: 40px; }
+.timeline-card-3d {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-spatial);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.timeline-item:hover .timeline-card-3d {
+  transform: translateX(12px);
+  border-color: var(--accent-color);
+}
+.timeline-item::before {
+  content: ''; position: absolute; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--bg-body);
+  left: -37px; top: 40px; border: 3px solid var(--accent-color);
+  z-index: 2; transition: all 0.3s ease;
+}
+.timeline-item:hover::before { transform: scale(1.3); background: var(--accent-color); }
+.timeline-date {
+  font-size: 0.8rem; font-weight: 700; color: var(--text-muted);
+  letter-spacing: 1px;
+}
+.text-accent { color: var(--accent-color); font-weight: 600; }
+
 footer {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
+  padding: 60px 0; margin-top: 120px;
+  border-top: 1px solid var(--card-border);
+  color: var(--text-muted); font-size: 0.9rem;
 }
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero img {
-    width: 140px;
-    height: 140px;
-  }
+/* ==========================================
+   6. RESPONSIVE COMPACT FLATTENING
+   ========================================== */
+@media (max-width: 991.98px) {
+  .spatial-title { font-size: 3rem; letter-spacing: -1px; }
+  .glass-frame { height: 380px; transform: none !important; }
+}
+@media (max-width: 767.98px) {
+  .spatial-title { font-size: 2.5rem; }
+  .bento-card-inner { transform: none !important; }
+  .card-glow { display: none; }
+  .timeline-item:hover .timeline-card-3d { transform: none; }
 }

@@ -1,137 +1,223 @@
 <!DOCTYPE html>
-<html lang="id" data-bs-theme="light">
+<html lang="id" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <title>Portofolio Saya</title>
+    <title>YudhitRY — Spatial Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">🌐 Portofolio</a>
+        <a class="navbar-brand fw-extrabold" href="index.html">YudhitRY<span class="dot">.</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Beranda</a></li>
-            <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">Tentang</a></li>
-            <li class="nav-item"><a class="nav-link fw-semibold" href="portfolio.html">Portofolio</a></li>
-            <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Kontak</a></li>
-            <li class="nav-item d-flex align-items-center ms-3">
-              <span class="theme-toggle text-white" id="themeToggle">🌙</span>
+          <ul class="navbar-nav ms-auto space-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portofolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+            <li class="nav-item d-flex align-items-center ms-lg-4">
+              <span class="theme-toggle" id="themeToggle">🌙</span>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="content" data-aos="zoom-in">
-        <div class="img-circle" data-aos="fade-up">
-          <img src="assets/img/photo-saya.jpg" alt="Foto Saya" />
+    <section class="hero-spatial">
+      <div class="container">
+        <div class="row min-vh-100 align-items-center g-5">
+          
+          <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start" data-aos="fade-right" data-aos-delay="200">
+            <div class="hero-badge" data-aos="fade-down">✨ Tersedia untuk Project Baru</div>
+            <h1 class="spatial-title">Membentuk <span class="text-gradient">Pengalaman</span> Digital Modern.</h1>
+            <p class="spatial-lead">Halo, saya <strong>YudhitRY</strong>. Full-stack developer yang berfokus pada estetika visual kelas tinggi, interaktivitas spasial, dan performa kode yang optimal.</p>
+            <div class="hero-cta-group">
+              <a href="portfolio.html" class="btn-spatial-primary">Jelajahi Karya ➔</a>
+              <a href="contact.html" class="btn-spatial-secondary">Hubungi Saya</a>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-out-up" data-aos-delay="400">
+            <div class="spatial-showcase">
+              <div class="grid-overlay"></div>
+              <div class="glass-frame" id="heroFrame">
+                <img src="assets/img/Photo-saya.png" alt="YudhitRY" class="showcase-img" />
+                <div class="glass-card-tag">📍 Berbasis di Indonesia</div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <h1>Halo, Saya <span class="text-warning">YudhitRY</span></h1>
-        <p>Saya membangun website modern, interaktif, dan responsif.</p>
-        <a href="portfolio.html" class="btn">🚀 Lihat Portofolio</a>
       </div>
     </section>
 
-    <!-- Proyek -->
-    <main class="container my-5">
-      <h2 class="text-center mb-4 fw-bold">✨ Proyek Terbaru</h2>
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card">
-            <img src="assets/img/project1.png" class="card-img-top" alt="Project 1" />
-            <div class="card-body">
-              <h5 class="card-title">Project 1</h5>
-              <p class="card-text">Aplikasi Pelayanan Perpustakaan Sekolah dengan CodeIgniter 4</p>
+    <main class="container my-5 py-5">
+      <div class="text-center mb-5">
+        <span class="section-tag">KARYA TERPILIH</span>
+        <h2 class="fw-bold title-3d text-white mt-2">Arsitektur Proyek Terbaru</h2>
+      </div>
+      
+      <div class="bento-grid">
+        
+        <div class="bento-item item-large" data-aos="fade-up" data-aos-delay="100">
+          <div class="bento-card-inner card-hyper-3d">
+            <div class="card-glow"></div>
+            <div class="bento-img-wrapper">
+              <img src="assets/img/project1.png" alt="Project 1" />
+            </div>
+            <div class="bento-content">
+              <span class="project-category">CodeIgniter 4 • Education</span>
+              <h4 class="text-white fw-bold">Sistem Pelayanan Perpustakaan Sekolah Digital</h4>
+              <p>Platform otomasi sirkulasi buku, manajemen inventaris, dan rekapitulasi data perpustakaan berbasis web modern.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card">
-            <img src="assets/img/project2.png" class="card-img-top" alt="Project 2" />
-            <div class="card-body">
-              <h5 class="card-title">Project 2</h5>
-              <p class="card-text">Aplikasi Bank Mini Sekolah dengan CodeIgniter 4</p>
+        
+        <div class="bento-item item-medium" data-aos="fade-up" data-aos-delay="200">
+          <div class="bento-card-inner card-hyper-3d">
+            <div class="card-glow"></div>
+            <div class="bento-img-wrapper">
+              <img src="assets/img/project2.png" alt="Project 2" />
+            </div>
+            <div class="bento-content">
+              <span class="project-category">Framework CI4 • FinTech</span>
+              <h4 class="text-white fw-bold">Aplikasi Bank Mini Sekolah</h4>
+              <p>Sistem manajemen tabungan siswa dengan pencatatan transaksi *real-time* terintegrasi database.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="card">
-            <img src="assets/img/project3.png" class="card-img-top" alt="Project 3" />
-            <div class="card-body">
-              <h5 class="card-title">Project 3</h5>
-              <p class="card-text">Aplikasi Desa Offline Berbasis Excel (VBA & Macro)</p>
+        
+        <div class="bento-item item-small" data-aos="fade-up" data-aos-delay="300">
+          <div class="bento-card-inner card-hyper-3d">
+            <div class="card-glow"></div>
+            <div class="bento-img-wrapper">
+              <img src="assets/img/project3.png" alt="Project 3" />
+            </div>
+            <div class="bento-content">
+              <span class="project-category">VBA & Macro • Offline Automation</span>
+              <h4 class="text-white fw-bold">Sistem Administrasi Desa</h4>
+              <p>Otomasi pengolahan data kependudukan dan surat-menyurat berbasis Excel Makro tingkat lanjut.</p>
             </div>
           </div>
         </div>
+
       </div>
     </main>
 
-    <!-- Timeline -->
-    <section class="container my-5">
-      <h2 class="text-center mb-4 fw-bold">📌 Pengalaman</h2>
-      <div class="timeline">
-        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
-          <h5>Magang SMKN 1 Subang</h5>
-          <span class="timeline-date">2022 - 2023</span>
-          <p>Menjadi Tenaga IT Support Di SMKN 1 Subang</p>
-        </div>
-        <div class="timeline-item" data-aos="fade-right">
-          <h5>Web Developer - SMKN 1 Subang</h5>
-          <span class="timeline-date">2024 - Sekarang</span>
-          <p>Membangun aplikasi berbasis web modern dengan Framework CodeIgniter 4 dan Laravel.</p>
-        </div>
-        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
-          <h5>Freelancer</h5>
-          <span class="timeline-date">2024 - Sekarang</span>
-          <p>Mengerjakan berbagai project website untuk UMKM.</p>
+    <section class="container my-5 py-5">
+      <div class="text-center mb-5">
+        <span class="section-tag">REKAM JEJAK</span>
+        <h2 class="fw-bold title-3d text-white mt-2">Pengalaman Profesional</h2>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline">
+          
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-card-3d">
+              <span class="timeline-date">2024 — Sekarang</span>
+              <h5 class="text-white fw-bold mt-2">Web Developer</h5>
+              <p class="text-accent mb-1">SMKN 1 Subang</p>
+              <p class="mb-0">Mendesain, mengoptimalkan, dan membangun infrastruktur aplikasi berbasis web menggunakan ekosistem Framework modern.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-card-3d special-node">
+              <span class="timeline-date">2024 — Sekarang</span>
+              <h5 class="text-white fw-bold mt-2">Independent Freelancer</h5>
+              <p class="text-accent mb-1">Digital Crafting</p>
+              <p class="mb-0">Membantu bisnis lokal dan UMKM bertransformasi ke digital melalui pembuatan website kustom berkinerja tinggi.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-card-3d">
+              <span class="timeline-date">2022 — 2023</span>
+              <h5 class="text-white fw-bold mt-2">IT Support Specialist (Magang)</h5>
+              <p class="text-accent mb-1">SMKN 1 Subang</p>
+              <p class="mb-0">Mengelola jaringan lokal, melakukan pemeliharaan perangkat keras sekolah, dan troubleshooting sistem operasi.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="text-center">
-      <p class="mb-0">&copy; 2025 Portofolio Saya. Dibuat dengan penuh ❤️.</p>
+      <div class="container">
+        <p class="mb-0">&copy; 2026 YudhitRY. All Rights Reserved. Crafted with Cyber-Organic Grid.</p>
+      </div>
     </footer>
 
-    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({ duration: 1000, once: true });
 
-      // Navbar scroll effect
+      // Perubahan status navbar saat scroll
       window.addEventListener("scroll", function () {
         document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
       });
 
-      // Dark/Light toggle
+      // Dark / Light Theme Handler
       const themeToggle = document.getElementById("themeToggle");
       themeToggle.addEventListener("click", () => {
         const html = document.documentElement;
-        const isLight = html.getAttribute("data-bs-theme") === "light";
-        html.setAttribute("data-bs-theme", isLight ? "dark" : "light");
-        themeToggle.textContent = isLight ? "☀️" : "🌙";
+        const isDark = html.getAttribute("data-bs-theme") === "dark";
+        html.setAttribute("data-bs-theme", isDark ? "light" : "dark");
+        themeToggle.textContent = isDark ? "☀️" : "🌙";
       });
+
+      // Advanced Light-Tracking Mouse Effect untuk Bento Grid
+      const cards = document.querySelectorAll('.card-hyper-3d');
+      cards.forEach(card => {
+        const glow = card.querySelector('.card-glow');
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const xc = rect.width / 2;
+          const yc = rect.height / 2;
+          const angleX = (yc - y) / 12;
+          const angleY = (x - xc) / 12;
+
+          card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.015, 1.015, 1.015)`;
+          glow.style.opacity = '1';
+          glow.style.background = `radial-gradient(circle 220px at ${x}px ${y}px, var(--neon-glow-effect), transparent 80%)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          glow.style.opacity = '0';
+        });
+      });
+
+      // Parallax Lembut pada Frame Hero Gambar Utama
+      const heroFrame = document.getElementById('heroFrame');
+      if(heroFrame) {
+        document.addEventListener('mousemove', (e) => {
+          const x = (window.innerWidth / 2 - e.clientX) / 45;
+          const y = (window.innerHeight / 2 - e.clientY) / 45;
+          heroFrame.style.transform = `rotateY(${x - 10}deg) rotateX(${y + 5}deg) translateZ(10px)`;
+        });
+      }
     </script>
   </body>
 </html>
